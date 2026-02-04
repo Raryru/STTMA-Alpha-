@@ -13,7 +13,7 @@ func _ready() -> void:
 	options.visible = false
 	levels.visible = false
 	TranslationServer.set_locale(Global.lang)
-	
+	Global.first_time = false
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

@@ -1,0 +1,85 @@
+[gd_scene load_steps=15 format=3 uid="uid://dyl7ya7y3575t"]
+
+[ext_resource type="Script" uid="uid://bk2713nphgbya" path="res://Scenes/Entities/Player/player.gd" id="1_lyjr2"]
+[ext_resource type="AnimationLibrary" uid="uid://njgs5a8a1gyu" path="res://Animations/EntityAnimations.res" id="2_0fwr3"]
+[ext_resource type="Texture2D" uid="uid://bfvb883gbkd44" path="res://Sprites/Characters_Sprites/Player.png" id="2_uo8jp"]
+[ext_resource type="Texture2D" uid="uid://bjnsobynv75gf" path="res://Sprites/Characters_Sprites/Shadow.png" id="3_1mdwi"]
+[ext_resource type="Script" uid="uid://r3itafoaswi8" path="res://Scenes/Components/player_state_machine.gd" id="3_siygm"]
+[ext_resource type="Script" uid="uid://c0uvyyrwu33f8" path="res://Scenes/Components/state_idle.gd" id="4_apx8m"]
+[ext_resource type="Script" uid="uid://b2ucbe3o2tbky" path="res://Scenes/Components/state_walk.gd" id="5_fu1fx"]
+[ext_resource type="Script" uid="uid://b6xt3vre3un5i" path="res://Scenes/Components/state_attack.gd" id="6_fu1fx"]
+[ext_resource type="AudioStream" uid="uid://03vlutecc704" path="res://Audio/SoundEffects/SwordSwoosh.wav" id="7_dxcao"]
+[ext_resource type="PackedScene" uid="uid://dis7khakus4aw" path="res://Scenes/GeneralNodes/HurtBox/hurt_box.tscn" id="9_8gg06"]
+[ext_resource type="Script" uid="uid://bn48myuv8nj7c" path="res://Scenes/Entities/Player/PlayerInteractionsHost.gd" id="9_cscr0"]
+[ext_resource type="Script" uid="uid://3e2r5a4qcygl" path="res://Scenes/Entities/Player/PlayerCamera.gd" id="10_plevq"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1mdwi"]
+radius = 4.0
+height = 10.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cscr0"]
+radius = 8.0
+
+[node name="Player" type="CharacterBody2D"]
+collision_mask = 16
+script = ExtResource("1_lyjr2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4)
+shape = SubResource("CapsuleShape2D_1mdwi")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": ExtResource("2_0fwr3")
+}
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_uo8jp")
+hframes = 8
+vframes = 12
+
+[node name="ShadowSprite" type="Sprite2D" parent="Sprite2D"]
+modulate = Color(0, 0, 0, 0.67058825)
+show_behind_parent = true
+position = Vector2(0, 8)
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("3_1mdwi")
+
+[node name="AttackHurtBox" parent="Sprite2D" instance=ExtResource("9_8gg06")]
+unique_name_in_owner = true
+position = Vector2(0, 4)
+collision_mask = 256
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/AttackHurtBox"]
+position = Vector2(0, 2)
+shape = SubResource("CircleShape2D_cscr0")
+debug_color = Color(0.7303091, 0.21357125, 0, 0.41960785)
+
+[node name="StateMachine" type="Node" parent="."]
+script = ExtResource("3_siygm")
+
+[node name="Idle" type="Node" parent="StateMachine"]
+script = ExtResource("4_apx8m")
+
+[node name="Walk" type="Node" parent="StateMachine"]
+script = ExtResource("5_fu1fx")
+
+[node name="Attack" type="Node" parent="StateMachine"]
+script = ExtResource("6_fu1fx")
+attack_sound = ExtResource("7_dxcao")
+decelerate_speed = 10.0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
+editor_draw_limits = true
+script = ExtResource("10_plevq")
+
+[node name="Audio" type="Node2D" parent="."]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Audio"]
+max_polyphony = 4
+bus = &"SFX"
+
+[node name="Interactions" type="Node2D" parent="."]
+script = ExtResource("9_cscr0")

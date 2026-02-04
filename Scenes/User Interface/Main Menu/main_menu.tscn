@@ -1,15 +1,14 @@
-[gd_scene load_steps=28 format=3 uid="uid://1y40g7quws23"]
+[gd_scene load_steps=27 format=3 uid="uid://1y40g7quws23"]
 
 [ext_resource type="Script" uid="uid://brxqrdjbf0khp" path="res://Scenes/User Interface/Main Menu/main_menu.gd" id="1_h16xc"]
 [ext_resource type="Texture2D" uid="uid://db601huuv261t" path="res://Sprites/UI_Sprites/Background.png" id="2_pve0g"]
 [ext_resource type="Script" uid="uid://u3s1jnl6cxxf" path="res://Scenes/User Interface/Main Menu/audio_control.gd" id="3_ji73l"]
-[ext_resource type="AudioStream" uid="uid://dfqiyuwj6wqk7" path="res://Audios/OST/omar_ashhh - 7562744735228595467.mp3" id="3_yy5gg"]
+[ext_resource type="AudioStream" uid="uid://dfqiyuwj6wqk7" path="res://Audio/OST/omar_ashhh - 7562744735228595467.mp3" id="3_yy5gg"]
 [ext_resource type="Script" uid="uid://bjf2bxnx7ktjs" path="res://Scenes/User Interface/Main Menu/sfx_control.gd" id="4_hj1ob"]
 [ext_resource type="Script" uid="uid://b4r2gkpru3swi" path="res://Scenes/User Interface/Main Menu/fullscreen_control.gd" id="4_kohwn"]
 [ext_resource type="Script" uid="uid://vscmrhof36rr" path="res://Scenes/User Interface/Main Menu/language_control.gd" id="6_clmdb"]
 [ext_resource type="Texture2D" uid="uid://c086be56abit4" path="res://Sprites/UI_Sprites/FirstLevelIcon.png" id="7_jpj78"]
-[ext_resource type="Texture2D" uid="uid://b513epksj55q" path="res://Sprites/Unknown/UnknownLevelIcon.png" id="7_r4wnh"]
-[ext_resource type="Script" uid="uid://dqcc5fdmbumle" path="res://Scenes/Components/language_component.gd" id="10_4et7r"]
+[ext_resource type="Texture2D" uid="uid://b513epksj55q" path="res://Sprites/PlaceHolders/UnknownLevelIcon.png" id="7_r4wnh"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yy5gg"]
 texture = ExtResource("2_pve0g")
@@ -518,9 +517,6 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_ji73l")
 theme_override_styles/hover = SubResource("StyleBoxFlat_kohwn")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_m75d0")
 text = "str_back"
-
-[node name="LanguageComponent" type="Node" parent="."]
-script = ExtResource("10_4et7r")
 
 [connection signal="pressed" from="MainButtons/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="MainButtons/Settings" to="." method="_on_settings_pressed"]

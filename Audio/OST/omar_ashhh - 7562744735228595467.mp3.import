@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dfqiyuwj6wqk7"
+path="res://.godot/imported/omar_ashhh - 7562744735228595467.mp3-dba500324860c7887094c9ae57fa0924.mp3str"
+
+[deps]
+
+source_file="res://Audio/OST/omar_ashhh - 7562744735228595467.mp3"
+dest_files=["res://.godot/imported/omar_ashhh - 7562744735228595467.mp3-dba500324860c7887094c9ae57fa0924.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

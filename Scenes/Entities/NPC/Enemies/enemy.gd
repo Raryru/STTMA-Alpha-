@@ -15,15 +15,17 @@ var invulnerable : bool = false
 @onready var animation_player : AnimationPlayer = $AnimationPlayer
 @onready var sprite : Sprite2D = $SpriteCharacter
 #@onready var hit_box : HitBox = $Hitbox
-#@onready var state_machine : EnemyStateMachine = $EnemyStateMachine
+@onready var state_machine : EnemyStateMachine = $EnemyStateMachine
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	state_machine.initialize( self )
+	player = PlayerManager.player
 	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	pass
 
 
@@ -52,8 +54,8 @@ func set_direction( _new_direction : Vector2 ) -> bool:
 	return true
 
 
-func update_animation(state : String ) -> void:
-	animation_player.play("state" + "_" + anim_direction())
+func update_animation( state : String ) -> void:
+	animation_player.play( state + "_" + anim_direction() )
 
 
 func anim_direction() -> String:

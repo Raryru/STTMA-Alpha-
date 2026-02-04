@@ -1,8 +1,11 @@
-[gd_scene load_steps=19 format=3 uid="uid://cuqcck76skbq8"]
+[gd_scene load_steps=22 format=3 uid="uid://cuqcck76skbq8"]
 
 [ext_resource type="Script" uid="uid://qcdqgevs5aam" path="res://Scenes/Entities/NPC/Enemies/enemy.gd" id="1_58owv"]
 [ext_resource type="Texture2D" uid="uid://ca5dluxjc72l" path="res://Sprites/Characters_Sprites/pillager.png" id="1_mnjkl"]
 [ext_resource type="Texture2D" uid="uid://bjnsobynv75gf" path="res://Sprites/Characters_Sprites/Shadow.png" id="1_p2s4r"]
+[ext_resource type="Script" uid="uid://cpo8ctguj2skw" path="res://Scenes/Entities/NPC/Enemies/enemy_state_machine.gd" id="4_bny6e"]
+[ext_resource type="Script" uid="uid://u6xjuskyou7d" path="res://Scenes/Entities/NPC/Enemies/states/enemy_state_idle.gd" id="5_ixeqr"]
+[ext_resource type="Script" uid="uid://ce2a08q7utl3d" path="res://Scenes/Entities/NPC/Enemies/states/enemy_state_wander.gd" id="6_sgmld"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ypgcr"]
 radius = 3.0
@@ -15,7 +18,7 @@ step = 0.17
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/path = NodePath("SpriteCharacter:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -32,7 +35,7 @@ step = 0.17
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/path = NodePath("SpriteCharacter:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -49,7 +52,7 @@ step = 0.17
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/path = NodePath("SpriteCharacter:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -66,7 +69,7 @@ step = 0.17
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/path = NodePath("SpriteCharacter:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -83,7 +86,7 @@ step = 0.17
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/path = NodePath("SpriteCharacter:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -101,7 +104,7 @@ step = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/path = NodePath("SpriteCharacter:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -119,7 +122,7 @@ step = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/path = NodePath("SpriteCharacter:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -137,7 +140,7 @@ step = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/path = NodePath("SpriteCharacter:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -155,7 +158,7 @@ step = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/path = NodePath("SpriteCharacter:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -173,7 +176,7 @@ step = 0.15
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/path = NodePath("SpriteCharacter:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -191,7 +194,7 @@ step = 0.15
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/path = NodePath("SpriteCharacter:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -209,7 +212,7 @@ step = 0.15
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/path = NodePath("SpriteCharacter:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -227,7 +230,7 @@ step = 0.15
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/path = NodePath("SpriteCharacter:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -260,12 +263,12 @@ collision_mask = 16
 script = ExtResource("1_58owv")
 
 [node name="ShadowSprite2D" type="Sprite2D" parent="."]
-modulate = Color(0.53344494, 0.09737795, 0.016728371, 0.7607843)
+modulate = Color(0.23529412, 0.023529412, 0.003921569, 0.58431375)
 position = Vector2(0, 3)
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("1_p2s4r")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="SpriteCharacter" type="Sprite2D" parent="."]
 position = Vector2(0, -4)
 texture = ExtResource("1_mnjkl")
 hframes = 8
@@ -281,3 +284,14 @@ shape = SubResource("CapsuleShape2D_ypgcr")
 libraries = {
 &"": SubResource("AnimationLibrary_bny6e")
 }
+
+[node name="EnemyStateMachine" type="Node" parent="."]
+script = ExtResource("4_bny6e")
+
+[node name="Idle" type="Node" parent="EnemyStateMachine" node_paths=PackedStringArray("after_idle_state")]
+script = ExtResource("5_ixeqr")
+after_idle_state = NodePath("../Wonder")
+
+[node name="Wonder" type="Node" parent="EnemyStateMachine" node_paths=PackedStringArray("next_state")]
+script = ExtResource("6_sgmld")
+next_state = NodePath("../Idle")

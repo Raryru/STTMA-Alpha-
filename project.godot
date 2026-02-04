@@ -20,7 +20,8 @@ config/windows_native_icon="res://icon.ico"
 [autoload]
 
 Global="*res://00_Globals/Global.gd"
-LevelManager="*res://00_Globals/GlobalLevelManager.gd"
+LevelManager="*res://00_Globals/global_level_manager.gd"
+PlayerManager="*res://00_Globals/global_player_manager.gd"
 
 [display]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://cuqcck76skbq8"]
+[gd_scene load_steps=36 format=3 uid="uid://cuqcck76skbq8"]
 
 [ext_resource type="Script" uid="uid://qcdqgevs5aam" path="res://Scenes/Entities/NPC/Enemies/enemy.gd" id="1_58owv"]
 [ext_resource type="Texture2D" uid="uid://bjnsobynv75gf" path="res://Sprites/EffectSprites/Shadow.png" id="1_p2s4r"]
@@ -12,7 +12,6 @@
 [ext_resource type="PackedScene" uid="uid://dis7khakus4aw" path="res://Scenes/GeneralNodes/HurtBox/hurt_box.tscn" id="7_7sdj2"]
 [ext_resource type="Script" uid="uid://dctka1gkn26ua" path="res://Scenes/Entities/NPC/Enemies/states/enemy_state_stun.gd" id="9_n7wip"]
 [ext_resource type="Texture2D" uid="uid://b8t4xjxhklbt1" path="res://Sprites/EffectSprites/DestroySmoke.png" id="10_n7wip"]
-[ext_resource type="Script" uid="uid://tiwdkysygdp" path="res://Scenes/Entities/NPC/Enemies/states/enemy_state_destroy.gd" id="12_1m5t7"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4a175"]
 radius = 8.0
@@ -723,14 +722,14 @@ script = ExtResource("1_58owv")
 [node name="HurtBox" parent="." instance=ExtResource("7_7sdj2")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
-position = Vector2(0, 4)
+position = Vector2(0, -3)
 shape = SubResource("CircleShape2D_4a175")
 debug_color = Color(0.59607846, 0.54509807, 0, 0.41960785)
 
 [node name="HitBox" parent="." instance=ExtResource("3_c1od2")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
-position = Vector2(0, -3)
+position = Vector2(0, 2)
 shape = SubResource("CircleShape2D_1m5t7")
 debug_color = Color(0.7294118, 0.21176471, 0, 0.41960785)
 
@@ -768,12 +767,10 @@ after_idle_state = NodePath("../Wonder")
 script = ExtResource("6_sgmld")
 next_state = NodePath("../Idle")
 
-[node name="Stun" type="Node" parent="EnemyStateMachine" node_paths=PackedStringArray("next_state")]
+[node name="Stun" type="Node" parent="EnemyStateMachine"]
 script = ExtResource("9_n7wip")
-next_state = NodePath("../Idle")
 
 [node name="Destroy" type="Node" parent="EnemyStateMachine"]
-script = ExtResource("12_1m5t7")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 max_polyphony = 4

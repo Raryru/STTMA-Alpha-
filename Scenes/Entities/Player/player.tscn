@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://bk2713nphgbya" path="res://Scenes/Entities/Player/player.gd" id="1_lyjr2"]
 [ext_resource type="AnimationLibrary" uid="uid://njgs5a8a1gyu" path="res://Animations/EntityAnimations.res" id="2_0fwr3"]
 [ext_resource type="Texture2D" uid="uid://bfvb883gbkd44" path="res://Sprites/Characters_Sprites/Player.png" id="2_uo8jp"]
-[ext_resource type="Texture2D" uid="uid://bjnsobynv75gf" path="res://Sprites/Characters_Sprites/Shadow.png" id="3_1mdwi"]
+[ext_resource type="Texture2D" uid="uid://bjnsobynv75gf" path="res://Sprites/EffectSprites/Shadow.png" id="3_1mdwi"]
 [ext_resource type="Script" uid="uid://r3itafoaswi8" path="res://Scenes/Components/player_state_machine.gd" id="3_siygm"]
 [ext_resource type="Script" uid="uid://c0uvyyrwu33f8" path="res://Scenes/Components/state_idle.gd" id="4_apx8m"]
 [ext_resource type="Script" uid="uid://b2ucbe3o2tbky" path="res://Scenes/Components/state_walk.gd" id="5_fu1fx"]

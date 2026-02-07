@@ -1,26 +1,9 @@
 [gd_scene load_steps=11 format=3 uid="uid://ccynj7wv244o7"]
 
 [ext_resource type="Script" uid="uid://10d7ixg0f25o" path="res://Scenes/Props/Plants/plant.gd" id="1_akllp"]
-[ext_resource type="Texture2D" uid="uid://bjnsobynv75gf" path="res://Sprites/Characters_Sprites/Shadow.png" id="2_skk3w"]
+[ext_resource type="Texture2D" uid="uid://bjnsobynv75gf" path="res://Sprites/EffectSprites/Shadow.png" id="2_skk3w"]
 [ext_resource type="Texture2D" uid="uid://04uersqtoqr7" path="res://Sprites/Props_Sprites/Plants.png" id="2_w3sfv"]
 [ext_resource type="PackedScene" uid="uid://bhj4q4kgo38xe" path="res://Scenes/GeneralNodes/HitBox/hit_box.tscn" id="3_oun8e"]
-
-[sub_resource type="Animation" id="Animation_sx8ed"]
-resource_name = "idle"
-length = 0.8
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 3, 2]
-}
 
 [sub_resource type="Animation" id="Animation_skk3w"]
 length = 0.001
@@ -50,6 +33,23 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [1, 2, 4]
+}
+
+[sub_resource type="Animation" id="Animation_sx8ed"]
+resource_name = "idle"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 3, 2]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_hsj0i"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bjnsobynv75gf"
-path="res://.godot/imported/Shadow.png-2effe371ed0d1e5e5826075f35e3e3d2.ctex"
+uid="uid://s4htv8n20rpd"
+path="res://.godot/imported/pillageroptimizate2.0.png-de6a30b4fa71e2a26e77944676db7a0f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Characters_Sprites/Shadow.png"
-dest_files=["res://.godot/imported/Shadow.png-2effe371ed0d1e5e5826075f35e3e3d2.ctex"]
+source_file="res://Sprites/Characters_Sprites/pillageroptimizate2.0.png"
+dest_files=["res://.godot/imported/pillageroptimizate2.0.png-de6a30b4fa71e2a26e77944676db7a0f.ctex"]
 
 [params]
 

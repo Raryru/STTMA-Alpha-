@@ -183,4 +183,37 @@ shape = SubResource("SegmentShape2D_uo1ou")
 one_way_collision = true
 
 [node name="Pillager" parent="." instance=ExtResource("7_x85cv")]
-position = Vector2(-53, 31)
+position = Vector2(-29, -17)
+
+[node name="Pillager2" parent="." instance=ExtResource("7_x85cv")]
+position = Vector2(-45, -9)
+
+[node name="Pillager3" parent="." instance=ExtResource("7_x85cv")]
+position = Vector2(-13, -17)
+
+[node name="Pillager4" parent="." instance=ExtResource("7_x85cv")]
+position = Vector2(3, -9)
+
+[node name="Pillager5" parent="." instance=ExtResource("7_x85cv")]
+position = Vector2(-53, 23)
+
+[node name="Pillager6" parent="." instance=ExtResource("7_x85cv")]
+position = Vector2(-37, 39)
+
+[node name="Pillager7" parent="." instance=ExtResource("7_x85cv")]
+position = Vector2(-53, 7)
+
+[node name="Pillager8" parent="." instance=ExtResource("7_x85cv")]
+position = Vector2(19, 7)
+
+[node name="Pillager9" parent="." instance=ExtResource("7_x85cv")]
+position = Vector2(11, 39)
+
+[node name="Pillager10" parent="." instance=ExtResource("7_x85cv")]
+position = Vector2(-5, 47)
+
+[node name="Pillager11" parent="." instance=ExtResource("7_x85cv")]
+position = Vector2(-21, 39)
+
+[node name="Pillager12" parent="." instance=ExtResource("7_x85cv")]
+position = Vector2(19, 23)

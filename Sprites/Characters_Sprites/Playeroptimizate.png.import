@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://s4htv8n20rpd"
-path="res://.godot/imported/pillageroptimizate2.0.png-de6a30b4fa71e2a26e77944676db7a0f.ctex"
+uid="uid://bbedtetdntp2f"
+path="res://.godot/imported/Playeroptimizate.png-094826a10799a3695afcb369735e9724.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Characters_Sprites/pillageroptimizate2.0.png"
-dest_files=["res://.godot/imported/pillageroptimizate2.0.png-de6a30b4fa71e2a26e77944676db7a0f.ctex"]
+source_file="res://Sprites/Characters_Sprites/Playeroptimizate.png"
+dest_files=["res://.godot/imported/Playeroptimizate.png-094826a10799a3695afcb369735e9724.ctex"]
 
 [params]
 

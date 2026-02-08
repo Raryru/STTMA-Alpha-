@@ -1,8 +1,9 @@
 class_name Plant extends Node2D
 
 @onready var animation_player = $AnimationPlayer
-@onready var static_body_2d = $StaticBody2D
+@onready var collission = $StaticBody2D
 @onready var collision_shape_2d = $StaticBody2D/CollisionShape2D
+@onready var hit_box = $HitBox
 
 var invulnerable = false
 
@@ -13,10 +14,11 @@ func _ready():
 	pass # Replace with function body.
 
 
-func TakeDamage( _damage : int ) -> void:
-	#if !invulnerable:
-		#animation_player.play("death")
-		#collision_shape_2d.disabled = true
-		#get_tree().create_timer( animation_player.current_animation_length ).timeout
-	queue_free()
+func TakeDamage( hurt_box : HurtBox ) -> void:
+	if !invulnerable:
+		animation_player.play("death")
+		invulnerable = true
+		hit_box.queue_free()
+		get_tree().create_timer( animation_player.current_animation_length ).timeout
+		
 	pass

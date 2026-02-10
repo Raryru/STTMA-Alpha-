@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=4 uid="uid://5j3hby3wsi63"]
+[gd_scene load_steps=8 format=4 uid="uid://5j3hby3wsi63"]
 
 [ext_resource type="Script" uid="uid://c4t802wakfvfw" path="res://Scenes/Levels/FirstLevel/first_level.gd" id="1_mgr2k"]
 [ext_resource type="AudioStream" uid="uid://dfqiyuwj6wqk7" path="res://Audio/OST/omar_ashhh - 7562744735228595467.mp3" id="2_ctjk7"]
 [ext_resource type="PackedScene" uid="uid://ds2bmi8c44fmc" path="res://Scenes/TileMaps/Ground-01.tscn" id="3_uo1ou"]
+[ext_resource type="PackedScene" uid="uid://cuqcck76skbq8" path="res://Scenes/Entities/NPC/Enemies/Pillager/Pillager.tscn" id="6_mmclw"]
 [ext_resource type="PackedScene" uid="uid://dyl7ya7y3575t" path="res://Scenes/Entities/Player/player.tscn" id="6_uo1ou"]
 [ext_resource type="PackedScene" uid="uid://ccynj7wv244o7" path="res://Scenes/Props/Plants/Plant.tscn" id="8_x85cv"]
 
@@ -479,3 +480,12 @@ position = Vector2(1536, 0)
 rotation = -1.5707964
 shape = SubResource("SegmentShape2D_uo1ou")
 one_way_collision = true
+
+[node name="Pillager" parent="." instance=ExtResource("6_mmclw")]
+position = Vector2(32, 0)
+
+[node name="Pillager2" parent="." instance=ExtResource("6_mmclw")]
+position = Vector2(24, 32)
+
+[node name="Pillager3" parent="." instance=ExtResource("6_mmclw")]
+position = Vector2(8, 48)

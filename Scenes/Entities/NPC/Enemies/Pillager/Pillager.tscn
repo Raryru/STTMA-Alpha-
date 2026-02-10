@@ -18,7 +18,6 @@
 radius = 8.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1m5t7"]
-radius = 8.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ypgcr"]
 radius = 3.0
@@ -723,16 +722,16 @@ script = ExtResource("1_58owv")
 [node name="HurtBox" parent="." instance=ExtResource("7_7sdj2")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
-position = Vector2(0, 4)
+position = Vector2(0, 2)
 shape = SubResource("CircleShape2D_4a175")
-debug_color = Color(0.59607846, 0.54509807, 0, 0.41960785)
+debug_color = Color(0.7294118, 0.21176471, 0, 0.41960785)
 
 [node name="HitBox" parent="." instance=ExtResource("3_c1od2")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
-position = Vector2(0, -3)
+position = Vector2(0, 2)
 shape = SubResource("CircleShape2D_1m5t7")
-debug_color = Color(0.7294118, 0.21176471, 0, 0.41960785)
+debug_color = Color(0.59607846, 0.54509807, 0, 0.41960785)
 
 [node name="ShadowSprite2D" type="Sprite2D" parent="."]
 modulate = Color(0.23529412, 0.023529412, 0.003921569, 0.58431375)

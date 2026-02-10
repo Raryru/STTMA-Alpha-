@@ -322,36 +322,41 @@ autoplay = true
 bus = &"Music"
 parameters/looping = true
 
-[node name="Levels" type="Panel" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="LevelSelect" type="HBoxContainer" parent="Levels"]
+[node name="Levels" type="CenterContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -375.0
-offset_top = -200.0
-offset_right = 375.0
-offset_bottom = 200.0
+offset_left = -400.0
+offset_top = -250.0
+offset_right = 400.0
+offset_bottom = 250.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Levels"]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Levels/VBoxContainer"]
+custom_minimum_size = Vector2(750, 400)
+layout_mode = 2
+
+[node name="LevelSelect" type="HBoxContainer" parent="Levels/VBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 theme_override_constants/separation = 14
 alignment = 1
 
-[node name="Level1" type="Panel" parent="Levels/LevelSelect"]
+[node name="Level1" type="Panel" parent="Levels/VBoxContainer/ScrollContainer/LevelSelect"]
+custom_minimum_size = Vector2(240, 400)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/panel = SubResource("StyleBoxTexture_amgk8")
 
-[node name="Panel" type="Panel" parent="Levels/LevelSelect/Level1"]
+[node name="Panel" type="Panel" parent="Levels/VBoxContainer/ScrollContainer/LevelSelect/Level1"]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -362,7 +367,7 @@ offset_bottom = -0.25
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="Level1Label" type="Label" parent="Levels/LevelSelect/Level1/Panel"]
+[node name="Level1Label" type="Label" parent="Levels/VBoxContainer/ScrollContainer/LevelSelect/Level1/Panel"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -374,7 +379,7 @@ grow_horizontal = 2
 theme_override_font_sizes/font_size = 32
 text = "str_firstlevel"
 
-[node name="Select" type="Button" parent="Levels/LevelSelect/Level1/Panel"]
+[node name="Select" type="Button" parent="Levels/VBoxContainer/ScrollContainer/LevelSelect/Level1/Panel"]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -395,12 +400,13 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_kohwn")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_amgk8")
 text = "str_select"
 
-[node name="Level2" type="Panel" parent="Levels/LevelSelect"]
+[node name="Level2" type="Panel" parent="Levels/VBoxContainer/ScrollContainer/LevelSelect"]
+custom_minimum_size = Vector2(240, 400)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/panel = SubResource("StyleBoxTexture_jpj78")
 
-[node name="Panel" type="Panel" parent="Levels/LevelSelect/Level2"]
+[node name="Panel" type="Panel" parent="Levels/VBoxContainer/ScrollContainer/LevelSelect/Level2"]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -411,7 +417,7 @@ offset_bottom = -0.25
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="Level2Label" type="Label" parent="Levels/LevelSelect/Level2/Panel"]
+[node name="Level2Label" type="Label" parent="Levels/VBoxContainer/ScrollContainer/LevelSelect/Level2/Panel"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -423,7 +429,7 @@ grow_horizontal = 2
 theme_override_font_sizes/font_size = 32
 text = "str_secondlevel"
 
-[node name="Select" type="Button" parent="Levels/LevelSelect/Level2/Panel"]
+[node name="Select" type="Button" parent="Levels/VBoxContainer/ScrollContainer/LevelSelect/Level2/Panel"]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -445,12 +451,13 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_amgk8")
 disabled = true
 text = "str_unvailable"
 
-[node name="Level3" type="Panel" parent="Levels/LevelSelect"]
+[node name="Level3" type="Panel" parent="Levels/VBoxContainer/ScrollContainer/LevelSelect"]
+custom_minimum_size = Vector2(240, 400)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/panel = SubResource("StyleBoxTexture_jpj78")
 
-[node name="Panel" type="Panel" parent="Levels/LevelSelect/Level3"]
+[node name="Panel" type="Panel" parent="Levels/VBoxContainer/ScrollContainer/LevelSelect/Level3"]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -461,7 +468,7 @@ offset_bottom = -0.25
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="Level3Label" type="Label" parent="Levels/LevelSelect/Level3/Panel"]
+[node name="Level3Label" type="Label" parent="Levels/VBoxContainer/ScrollContainer/LevelSelect/Level3/Panel"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -473,7 +480,7 @@ grow_horizontal = 2
 theme_override_font_sizes/font_size = 32
 text = "str_thirdlevel"
 
-[node name="Select" type="Button" parent="Levels/LevelSelect/Level3/Panel"]
+[node name="Select" type="Button" parent="Levels/VBoxContainer/ScrollContainer/LevelSelect/Level3/Panel"]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -495,21 +502,113 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_amgk8")
 disabled = true
 text = "str_unvailable"
 
-[node name="BackLevels" type="Button" parent="Levels"]
-custom_minimum_size = Vector2(150, 25)
+[node name="Level4" type="Panel" parent="Levels/VBoxContainer/ScrollContainer/LevelSelect"]
+custom_minimum_size = Vector2(240, 400)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxTexture_jpj78")
+
+[node name="Panel" type="Panel" parent="Levels/VBoxContainer/ScrollContainer/LevelSelect/Level4"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -80.25
+offset_bottom = -0.25
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Level4Label" type="Label" parent="Levels/VBoxContainer/ScrollContainer/LevelSelect/Level4/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -78.5
+offset_right = 78.5
+offset_bottom = 45.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 32
+text = "str_fourthlevel"
+
+[node name="Select" type="Button" parent="Levels/VBoxContainer/ScrollContainer/LevelSelect/Level4/Panel"]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -75.0
-offset_top = -52.0
-offset_right = 75.0
-offset_bottom = -12.0
+offset_left = -40.0
+offset_top = -34.0
+offset_right = 40.0
 grow_horizontal = 2
 grow_vertical = 0
 pivot_offset = Vector2(51, -233)
+theme_override_colors/font_color = Color(0.6745098, 0.4392157, 0.3529412, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_yy5gg")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ji73l")
+theme_override_styles/hover = SubResource("StyleBoxFlat_kohwn")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_amgk8")
+disabled = true
+text = "str_unvailable"
+
+[node name="Level5" type="Panel" parent="Levels/VBoxContainer/ScrollContainer/LevelSelect"]
+custom_minimum_size = Vector2(240, 400)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxTexture_jpj78")
+
+[node name="Panel" type="Panel" parent="Levels/VBoxContainer/ScrollContainer/LevelSelect/Level5"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -80.25
+offset_bottom = -0.25
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Level5Label" type="Label" parent="Levels/VBoxContainer/ScrollContainer/LevelSelect/Level5/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -78.5
+offset_right = 78.5
+offset_bottom = 45.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 32
+text = "str_fifthlevel"
+
+[node name="Select" type="Button" parent="Levels/VBoxContainer/ScrollContainer/LevelSelect/Level5/Panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -34.0
+offset_right = 40.0
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset = Vector2(51, -233)
+theme_override_colors/font_color = Color(0.6745098, 0.4392157, 0.3529412, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_yy5gg")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ji73l")
+theme_override_styles/hover = SubResource("StyleBoxFlat_kohwn")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_amgk8")
+disabled = true
+text = "str_unvailable"
+
+[node name="BackLevels" type="Button" parent="Levels/VBoxContainer"]
+custom_minimum_size = Vector2(150, 25)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 theme_override_colors/font_color = Color(0.6745098, 0.4392157, 0.3529412, 1)
 theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = SubResource("StyleBoxFlat_yy5gg")
@@ -527,5 +626,5 @@ text = "str_back"
 [connection signal="button_down" from="Options/LanguageControl/Kazakh" to="Options/LanguageControl" method="_on_kazakh_button_down"]
 [connection signal="button_down" from="Options/LanguageControl/English" to="Options/LanguageControl" method="_on_english_button_down"]
 [connection signal="button_down" from="Options/LanguageControl/Russian" to="Options/LanguageControl" method="_on_russian_button_down"]
-[connection signal="pressed" from="Levels/LevelSelect/Level1/Panel/Select" to="." method="_on_select_first_level_pressed"]
-[connection signal="pressed" from="Levels/BackLevels" to="." method="_on_back_levels_pressed"]
+[connection signal="pressed" from="Levels/VBoxContainer/ScrollContainer/LevelSelect/Level1/Panel/Select" to="." method="_on_select_first_level_pressed"]
+[connection signal="pressed" from="Levels/VBoxContainer/BackLevels" to="." method="_on_back_levels_pressed"]

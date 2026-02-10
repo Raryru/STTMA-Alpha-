@@ -8,12 +8,11 @@ var lang_english := "en"
 var lang_kazakh := "kk"
 var lang_russian := "ru"
 
-
 func _ready() -> void:
 	if Global.first_time:
 		language_check(Global.lang)
 	else:
-		language_check(Global.lang)
+		language_set(Global.lang)
 
 
 func language_check(language):
@@ -27,7 +26,6 @@ func language_check(language):
 		lang_russian:
 			english.button_pressed = false
 			kazakh.button_pressed = false
-			
 
 
 func language_set(language):

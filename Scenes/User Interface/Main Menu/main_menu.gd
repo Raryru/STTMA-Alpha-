@@ -3,7 +3,7 @@ extends Control
 @onready var main_buttons: VBoxContainer = $MainButtons
 @onready var options: Panel = $Options
 @onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
-@onready var levels: Panel = $Levels
+@onready var levels: CenterContainer = $Levels
 
 
 # Called when the node enters the scene tree for the first time.
